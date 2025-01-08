@@ -1,8 +1,11 @@
-import React from "react";
 import { Link as LinkR } from "react-router-dom";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
+import { BioData } from "../data/constants";
+import { MenuRounded } from "@mui/icons-material";
+import { useState } from "react";
 
-const NavbarContainer = styled.div`
+
+const Nav = styled.div `
     background-color: ${({ theme }) => theme.bg};
     height: 80px;
     display: flex;
@@ -14,8 +17,22 @@ const NavbarContainer = styled.div`
     color: white;
 `;
 
+
+const NavbarContainer = styled.div`
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+`;
+
 const NavLogo = styled(LinkR)`
+    width: 80%;
     padding: 0 6px;
+    font-weight: 500;
+    font-size: 18px;
     text-decoration: none;
     color: inherit;
 `;
@@ -39,6 +56,7 @@ const NavLink = styled.a`
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
+    white-space: nowrap;
     &:hover {
         color: ${({ theme }) => theme.primary};
     }
@@ -58,19 +76,69 @@ const ButtonContainer = styled.div`
 
 const GithubButton = styled.a`
     border: 1px solid ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.primary};
     justify-content: center;
     display: flex;
     align-items: center;
     border-radius: 20px;
     cursor: pointer;
-    padding: 0 20px;
+    padding: 10px 20px;
     font-size: 16px;
+    font-weight: 500;
+    transition: all 0.6s ease-in-out;
+    text-decoration: none;
+    &:hover {
+        background-color: ${({ theme }) => theme.primary};
+        color: ${({ theme }) => theme.text_primary};
+    }
+`;
+
+const MobileIcon = styled.div`
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: ${({ theme }) => theme.text_primary};
+    display: none;
+    @media screen and (max-width: 768px) {
+        display: block;
+    }
+`;
+
+const MobileMenu = styled.ul`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    padding: 0 6px;
+    list-style: none;
+    width: 100%;
+    padding: 12px 40px 24px 40px;
+    background: ${({ theme }) => theme.card_light + 99};
+    position: absolute;
+    top: 80px;
+    right: 0;
+
+    transition: all 0.6s ease-in-out;
+    transform: ${({ isOpen}) => 
+        isOpen ? 'translateY(0)' : 'translateY(-100%)'};
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
+    z-index: ${({ isOpen }) => (isOpen ? '1000' : '-1000')};
 `;
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const theme = useTheme();
     return (
-        <NavbarContainer>
+        <Nav>
+            <NavbarContainer>
             <NavLogo to="/">ChilitoLogo</NavLogo>
+
+            <MobileIcon onClick={() => setIsOpen(!isOpen)}>
+                <MenuRounded style={{color: 'inherit'}}/>
+            </MobileIcon>
 
             <NavItems>
                 <NavLink href="#About">Acerca de mi</NavLink>
@@ -80,10 +148,27 @@ const Navbar = () => {
                 <NavLink href="#Education">Educación</NavLink>
             </NavItems>
 
+            {
+                isOpen && (
+                <MobileMenu isOpen={isOpen}>
+                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#About">Acerca de mi</NavLink>
+                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#Skills">Skills</NavLink>
+                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#Experience">Experiencia</NavLink>
+                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#projects">Proyectos</NavLink>
+                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#Education">Educación</NavLink>
+                    <GithubButton href={BioData.github} 
+                    target="_Blank"
+                    style={{background: theme.primary, color: theme.text_primary}}
+                    >Github Profile</GithubButton>
+                </MobileMenu>
+                )
+            }
             <ButtonContainer>
-                <GithubButton>Github Profile</GithubButton>
+                <GithubButton href={BioData.github} target="_Blank">Github Profile</GithubButton>
             </ButtonContainer>
         </NavbarContainer>
+        </Nav>
+        
     )
 }
 
