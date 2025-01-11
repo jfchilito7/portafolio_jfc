@@ -1,5 +1,5 @@
 export const BioData = {
-    name: 'Juan Felipe chilito',
+    name: 'Juan Felipe Chilito',
     roles: [
         'Desarrollador Full Stack',
         'Diseñador UI/UX',
