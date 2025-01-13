@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { BioData } from '../../data/constants';
 import Typewriter from 'typewriter-effect';
+import HeroImage from '../../images/HeroImage.PNG';
+import HeroBgAnimation from '../HeroBgAnimation'
 
 const HeroContainer = styled.div`
     display: flex;
@@ -55,7 +57,8 @@ const HeroLeftContainer = styled.div`
 const HeroRightContainer = styled.div`
     width: 100%;
     order: 2;
-    background-color: blue;
+    display: flex;
+    justify-content: end;
 
     @media screen and (max-width: 960px) {
         order: 1;
@@ -147,14 +150,62 @@ const ResumeButton = styled.a `
     background: -webkit-linear-gradient(225deg, hsla(204, 100%, 50%, 1) 0%, hsla(204, 100%, 50%, 1) 100%);
     box-shadow: 20px 20px 60px #1f2634, -20px -20px 60px #1f2634;
     border-radius: 50px;
-    font-weight: 700;
-    font-size: 18px;
-`
+    font-weight: 600;
+    font-size: 20px;
+
+    &:hover {
+        transform: scale(1.05);
+        transition: all 0.4s ease-in-out;
+        box-shadow: 20px 20px 60px #1F2634,
+        filter: brightness(1);
+    }
+    
+    @media screen and (max-width: 960px) {
+        padding: 12px 0;
+        font-size: 18px;
+    }
+`;
+
+const Img = styled.img `
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    border: 2px solid ${({theme}) => theme.primary};
+
+    @media screen and (max-width: 640px) {
+        max-width: 280px;
+        max-height: 280px;
+    }
+`;
+
+const HeroBg = styled.div `
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    max-width: 1360px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transform: translate(-50%, -50%);
+
+    @media screen and (max-width: 960px) {
+        justify-content: center;
+        padding: 0 0px;
+    }
+
+`;
 
 const Hero = () => {
     return (
         <div id='about'>
             <HeroContainer>
+                <HeroBg>
+                    <HeroBgAnimation />
+                </HeroBg>
                 <HeroInnerContainer>
                     <HeroLeftContainer>
                         <Title>
@@ -175,7 +226,9 @@ const Hero = () => {
                         <SubTitle>{BioData.description}</SubTitle>
                         <ResumeButton>Descargar CV</ResumeButton>
                     </HeroLeftContainer>
-                    <HeroRightContainer>Right</HeroRightContainer>
+                    <HeroRightContainer>
+                        <Img src={HeroImage} alt='Juan Felipe Chilito' />
+                    </HeroRightContainer>
                 </HeroInnerContainer>
             </HeroContainer>
         </div>
