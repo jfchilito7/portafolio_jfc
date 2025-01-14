@@ -3,6 +3,9 @@ import { BioData } from '../../data/constants';
 import Typewriter from 'typewriter-effect';
 import HeroImage from '../../images/HeroImage.PNG';
 import HeroBgAnimation from '../HeroBgAnimation'
+import Tilt from 'react-parallax-tilt';
+import { motion } from 'framer-motion';
+import { headContainerAnimation, headContentAnimation, headTextAnimation } from '../../utils/motion';
 
 const HeroContainer = styled.div`
     display: flex;
@@ -206,30 +209,45 @@ const Hero = () => {
                 <HeroBg>
                     <HeroBgAnimation />
                 </HeroBg>
-                <HeroInnerContainer>
-                    <HeroLeftContainer>
-                        <Title>
-                            Hola! Soy <br /> {BioData.name}
-                        </Title>
-                        <TextLoop>
-                            Yo soy
-                            <Span>
-                                <Typewriter
-                                    options={{
-                                        strings: BioData.roles,
-                                        autoStart: true,
-                                        loop: true,
-                                    }}
-                                /> 
-                            </Span>
-                        </TextLoop>
-                        <SubTitle>{BioData.description}</SubTitle>
-                        <ResumeButton>Descargar CV</ResumeButton>
-                    </HeroLeftContainer>
-                    <HeroRightContainer>
-                        <Img src={HeroImage} alt='Juan Felipe Chilito' />
-                    </HeroRightContainer>
-                </HeroInnerContainer>
+                <motion.div {...headContainerAnimation}>
+                    <HeroInnerContainer>
+                        <HeroLeftContainer>
+                            <motion.div {...headTextAnimation}>
+                                <Title>
+                                    Hola! Soy <br /> {BioData.name}
+                                </Title>
+                                <TextLoop>
+                                Yo soy
+                                <Span>
+                                    <Typewriter
+                                        options={{
+                                            strings: BioData.roles,
+                                            autoStart: true,
+                                            loop: true,
+                                        }}
+                                    /> 
+                                </Span>
+                                </TextLoop>
+                            </motion.div>
+
+                            <motion.div {...headContentAnimation}>
+                                <SubTitle>{BioData.description}</SubTitle>
+                            </motion.div>
+                            
+                            <ResumeButton>Descargar CV</ResumeButton>
+                        </HeroLeftContainer>
+                        <HeroRightContainer>
+
+                            <motion.div {...headContentAnimation}>
+                                <Tilt>
+                                    <Img src={HeroImage} alt='Juan Felipe Chilito' />
+                                </Tilt>
+                            </motion.div>
+                            
+                        </HeroRightContainer>
+                    </HeroInnerContainer>
+                </motion.div>
+                
             </HeroContainer>
         </div>
     )
