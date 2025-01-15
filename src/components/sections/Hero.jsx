@@ -6,6 +6,7 @@ import HeroBgAnimation from '../HeroBgAnimation'
 import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
 import { headContainerAnimation, headContentAnimation, headTextAnimation } from '../../utils/motion';
+import StarsCanvas from '../canvas/Stars';
 
 const HeroContainer = styled.div`
     display: flex;
@@ -207,6 +208,7 @@ const Hero = () => {
         <div id='about'>
             <HeroContainer>
                 <HeroBg>
+                    <StarsCanvas />
                     <HeroBgAnimation />
                 </HeroBg>
                 <motion.div {...headContainerAnimation}>

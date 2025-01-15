@@ -22,6 +22,7 @@ function App() {
           <Navbar />
           <Body>
             <Hero />
+            <Skills />
           </Body>
         </BrowserRouter>
       </ThemeProvider>
