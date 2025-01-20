@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { VerticalTimeline } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 import { experiences } from '../../data/constants';
 import ExperienceCard from '../cards/ExperienceCard';
 
@@ -50,8 +52,6 @@ const Desc = styled.div`
         font-size: 16px;
     }
 `;
-
-const VerticalTimeline = styled.div``;
 
 const Experience = () =>{
     return (
