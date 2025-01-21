@@ -186,21 +186,26 @@ const Img = styled.img `
 
 const HeroBg = styled.div `
     position: absolute;
-    top: 50%;
-    left: 50%;
+    display: flex;
+    justify-content: end;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     max-width: 1360px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    transform: translate(-50%, -50%);
+    overflow: hidden;
+    padding: 0 30px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 
-    @media screen and (max-width: 960px) {
+    @media (max-width: 960px) {
         justify-content: center;
         padding: 0 0px;
     }
-
 `;
 
 const Hero = () => {

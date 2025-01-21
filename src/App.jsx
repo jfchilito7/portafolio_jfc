@@ -6,6 +6,9 @@ import Hero from './components/sections/Hero';
 import Skills from './components/sections/Skills';
 import Experience from './components/sections/Experience';
 import Education from './components/sections/Education';
+import StartCanvas from './components/canvas/Stars';
+import Projects from './components/sections/Projects';
+
 
 const Body = styled.div`
   background-color: ${({theme}) => theme.bg};
@@ -32,6 +35,7 @@ const Wrapper = styled.div`
   clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 98%, 0 100%);
 `;
 
+
 function App() {
 
   return (
@@ -40,12 +44,18 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Body>
-            <Hero />
-            <Wrapper>
-              <Skills />
-              <Experience />
-            </Wrapper>
-            <Education />
+            <StartCanvas />
+            <div>
+              <Hero />
+              <Wrapper>
+                <Skills />
+                <Experience />
+              </Wrapper>
+              <Projects />
+              <Wrapper>
+                <Education />
+              </Wrapper>
+            </div>
           </Body>
         </BrowserRouter>
       </ThemeProvider>
