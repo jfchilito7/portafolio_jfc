@@ -121,8 +121,8 @@ const Projects = () => {
                     </ToggleButton>
                     <Divider />
                     <ToggleButton
-                        active={toggle === 'Web app'}
-                        onClick={() => setToggle('Web app')}
+                        active={toggle === 'web app'}
+                        onClick={() => setToggle('web app')}
                     >Web app  
                     </ToggleButton>
                     <Divider />
@@ -139,7 +139,12 @@ const Projects = () => {
                     </ToggleButton>
                 </ToggleButtonGroup>
                 <CardContainer>
-                    {toggle === 'all' && projects.map((project) => <ProjectCard project={project} />)}
+                    {toggle === 'all' && 
+                        projects.map((project) => <ProjectCard project={project} />)}
+                    {projects
+                        .filter((project) => project.category === toggle)
+                        .map((project) => ( <ProjectCard project={project} />
+                    ))}
                 </CardContainer>
             </Wrapper>
         </Container>
