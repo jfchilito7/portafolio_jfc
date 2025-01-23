@@ -1,10 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { VerticalTimeline } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import { education } from '../../data/constants';
-import EducationCard from '../cards/EducationCard';
-import EarthCanvas from '../canvas/Earth';
 
 const Container = styled.div`
     display: flex;
@@ -54,31 +49,22 @@ const Desc = styled.div`
     }
 `;
 
-const Education = () =>{
+const Contact = () => {
     return (
         <Container id='Education'>
             <Wrapper>
-                <Title>Educación</Title>
+                <Title>Contacto</Title>
                 <Desc
                     style={{
                         marginBottom: '40px',
                     }}
                 >
-                    Mi Educación como ingeniero multimedia y experiencia en compañias y proyectos
+                    Si tienes alguan pregunta para mi o quieres contactarme, no dudes en hacerlo.
                 </Desc>
 
-                <VerticalTimeline>
-                    {education.map((education, index) => (
-                        <EducationCard 
-                            key={`education-${index}`}
-                            education={education}
-                        />
-                    ))}
-                </VerticalTimeline>
-                <EarthCanvas />
             </Wrapper>
         </Container>
     )
 }
 
-export default Education
+export default Contact
