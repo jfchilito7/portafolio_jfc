@@ -1,6 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
 import { VerticalTimelineElement } from 'react-vertical-timeline-component';
+import PropTypes from 'prop-types';
 
 const Top = styled.div`
     width: 100%;
@@ -104,7 +104,7 @@ const ExperienceCard = ({ experience }) => {
             <img 
                 width = '100%'
                 height = '100%'
-                alt={experience?.company}
+                alt={`Logo de ${experience?.company}`}
                 style={{borderRadius: '50%', objectFit: 'cover'}}
                 src={experience?.img}
             />
@@ -127,7 +127,7 @@ const ExperienceCard = ({ experience }) => {
         date={experience?.date}
         >
             <Top>
-                <Image src={experience?.img} alt={experience.company} />
+                <Image src={experience?.img} alt={`Logo de ${experience?.company}`} />
                 <Body>
                     <Role>{experience?.role}</Role>
                     <Company>{experience?.company}</Company>
@@ -140,10 +140,10 @@ const ExperienceCard = ({ experience }) => {
                         <>
                             <br />
                             <Skills>
-                                <b>Skills</b>
+                                <b>Skills:</b>
                                 <ItemWrapper>
                                     {experience?.skills?.map((skill, index) => (
-                                        <Skill>• {skill}</Skill>
+                                        <Skill key={index}>• {skill}</Skill>
                                     ))}
                                 </ItemWrapper>
                             </Skills>
@@ -151,7 +151,19 @@ const ExperienceCard = ({ experience }) => {
                     )}
                 </Description>
         </VerticalTimelineElement>
-    )
-}
+    );
+};
+
+ExperienceCard.propTypes = {
+    experience: PropTypes.shape({
+        role: PropTypes.string.isRequired,
+        company: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        desc: PropTypes.string,
+        skills: PropTypes.arrayOf(PropTypes.string),
+        img: PropTypes.string,
+    }).isRequired,
+};
+
 
 export default ExperienceCard

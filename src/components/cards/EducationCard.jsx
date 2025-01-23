@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 import PropTypes from 'prop-types';
