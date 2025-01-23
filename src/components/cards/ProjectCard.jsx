@@ -1,5 +1,5 @@
-import React from 'react'
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Card = styled.div`
     width: 330px;
@@ -87,7 +87,7 @@ const Members = styled.div`
     padding-left: 10px;
 `;
 
-const Avatar = styled.div`
+const Avatar = styled.img`
     width: 38px;
     height: 38px;
     border-radius: 50%;
@@ -104,10 +104,12 @@ const Button = styled.a`
     text-align: center;
 `;
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project = { member: []} }) => {
     return (
         <Card>
-            <Image src={project.image} />
+            <Image src={project.image} alt={`Imagen del proyecto ${project.title}`} 
+            // onError={(e) => {e.target.src= '../../images/HeroImage.PNG'}} />
+            />
             <Tags></Tags>
             <Details>
                 <Title>{project.title}</Title>
@@ -115,8 +117,8 @@ const ProjectCard = ({ project }) => {
                 <Description>{project.description}</Description>
             </Details>
             <Members>
-                {project.member?.map((member) => (
-                    <Avatar src={member.img} />
+                {project.member?.map((member, index) => (
+                    <Avatar key={index} src={member.img} alt='Avatar del miembro' />
                 ))}
             </Members>
             <Button href={project.github} target='_blank'>
@@ -125,5 +127,20 @@ const ProjectCard = ({ project }) => {
         </Card>
     )
 }
+
+ProjectCard.propTypes = {
+    project: PropTypes.shape({
+        image: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        github: PropTypes.string.isRequired,
+        member: PropTypes.arrayOf(
+            PropTypes.shape({
+                img: PropTypes.string.isRequired,
+            })
+        ),  
+    }).isRequired,
+};
 
 export default ProjectCard

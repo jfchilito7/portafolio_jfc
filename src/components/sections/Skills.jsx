@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { skills } from '../../data/constants';
 import { Tilt } from 'react-tilt';
@@ -139,7 +138,7 @@ const Skills = () => {
 
                 <SkillsContainer>
                     {skills.map((skill, index) => (
-                        <Tilt>
+                        <Tilt key={`skill=${index}`}>
                             <Skill key={`skill -${index}`}>
                             <SkillTitle>{skill.title}</SkillTitle>
                             <SkillList>

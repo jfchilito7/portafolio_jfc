@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState } from 'react';
 import styled from 'styled-components';
 import { projects } from '../../data/constants';
@@ -72,19 +71,20 @@ const ToggleButton = styled.div`
     padding: 8px 18px;
     border-radius: 6px;
     cursor: pointer;
-    &:hover {
-        background: ${({theme}) => theme.primary + 20};
+
+    /* Usamos un atributo personalizado */
+    &[data-active='true'] {
+        background: ${({ theme }) => theme.primary + '20'};
     }
-    
+
+    &:hover {
+        background: ${({ theme }) => theme.primary + '20'};
+    }
+
     @media (max-width: 768px) {
         padding: 6px 8px;
         border-radius: 4px;
     }
-
-    ${({ active, theme}) =>
-        active && `
-            background: ${theme.primary + 20};
-    `}
 `;
 
 const Divider = styled.div`
@@ -111,39 +111,42 @@ const Projects = () => {
                         marginBottom: '40px',
                     }}
                 >
-                    I have worked on a wide range of projects. From web app. Here are some of my projects.
+                    He trabajado en una amplia variedad de proyectos, desde aplicaciones web
+                    hasta diseños interactivos. Aquí hay algunos de mis trabajos.
                 </Desc>
                 <ToggleButtonGroup>
                     <ToggleButton 
-                        active={toggle==='all'}
+                        data-active={toggle==='all'}
                         onClick={() => setToggle('all')}
                         >All
                     </ToggleButton>
                     <Divider />
                     <ToggleButton
-                        active={toggle === 'web app'}
+                        data-active={toggle === 'web app'}
                         onClick={() => setToggle('web app')}
                     >Web app  
                     </ToggleButton>
                     <Divider />
                     <ToggleButton
-                        active={toggle === 'Mobile app'}
+                        data-active={toggle === 'Mobile app'}
                         onClick={() => setToggle('Mobile app')}
                     >Mobile app
                     </ToggleButton>
                     <Divider />
                     <ToggleButton 
-                        active={toggle === 'Design'}
+                        data-active={toggle === 'Design'}
                         onClick={() => setToggle('Design')}
                     >Diseño
                     </ToggleButton>
                 </ToggleButtonGroup>
                 <CardContainer>
                     {toggle === 'all' && 
-                        projects.map((project) => <ProjectCard project={project} />)}
+                        projects.map((project, index) => 
+                        <ProjectCard key={`project-${index}`} project={project} />)}
                     {projects
                         .filter((project) => project.category === toggle)
-                        .map((project) => ( <ProjectCard project={project} />
+                        .map((project, index) => ( 
+                        <ProjectCard key={`filtered-project-${index}`} project={project} />
                     ))}
                 </CardContainer>
             </Wrapper>
