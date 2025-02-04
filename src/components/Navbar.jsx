@@ -144,7 +144,7 @@ const Navbar = () => {
                 <NavLink href="#About">Acerca de mi</NavLink>
                 <NavLink href="#Skills">Skills</NavLink>
                 <NavLink href="#Experience">Experiencia</NavLink>
-                <NavLink href="#projects">Proyectos</NavLink>
+                <NavLink href="#Projects">Proyectos</NavLink>
                 <NavLink href="#Education">Educación</NavLink>
             </NavItems>
 
