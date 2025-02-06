@@ -137,33 +137,30 @@ const SubTitle = styled.div`
 `;
 
 const ResumeButton = styled.a `
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
+    display: inline-block;
     text-decoration: none;
-
+    cursor: pointer;
     width: 95%;
     max-width: 300px;
     text-align: center;
     padding: 16px 0;
     margin-top: 42px;
-    
-    background: hlsa(271, 100%, 50%, 1);
     background: linear-gradient(225deg, hsla(204, 100%, 50%, 1) 0%, hsla(204, 100%, 50%, 1) 100%);
-    background: -moz-linear-gradient(225deg, hsla(204, 100%, 50%, 1) 0%, hsla(204, 100%, 50%, 1) 100%);
-    background: -webkit-linear-gradient(225deg, hsla(204, 100%, 50%, 1) 0%, hsla(204, 100%, 50%, 1) 100%);
     box-shadow: 20px 20px 60px #1f2634, -20px -20px 60px #1f2634;
     border-radius: 50px;
     font-weight: 600;
     font-size: 20px;
+    color: white;
+    z-index: 10;
+    position: relative;
 
     &:hover {
         transform: scale(1.05);
         transition: all 0.4s ease-in-out;
-        box-shadow: 20px 20px 60px #1F2634,
+        box-shadow: 20px 20px 60px #1F2634;
         filter: brightness(1);
     }
-    
+
     @media screen and (max-width: 960px) {
         padding: 12px 0;
         font-size: 18px;
@@ -241,7 +238,7 @@ const Hero = () => {
                                 <SubTitle>{BioData.description}</SubTitle>
                             </motion.div>
                             
-                            <ResumeButton>Descargar CV</ResumeButton>
+                            <ResumeButton href={BioData.resume} target='_blank'>Descargar CV</ResumeButton>
                         </HeroLeftContainer>
                         <HeroRightContainer>
 

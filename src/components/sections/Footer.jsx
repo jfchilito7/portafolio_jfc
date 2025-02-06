@@ -8,6 +8,7 @@ const FooterContainer = styled.div`
     display: flex;
     justify-content: center;
     z-index: 10;
+    position: relative;
 `;
 
 const FooterWrapper = styled.div`
@@ -75,6 +76,12 @@ const SocialMediaIcon = styled.a`
     }
 `;
 
+const Copyright = styled.p`
+    margint-top: 1.5rem;
+    font-size: 0.9rem;
+    color: ${({theme}) => theme.text_secondary};
+`;
+
 const Footer = () => {
     return (
         <FooterContainer>
@@ -98,6 +105,7 @@ const Footer = () => {
                         <GitHub />
                     </SocialMediaIcon>
                 </SocialMediaIcons>
+                <Copyright>&copy; 2025 Juan Felipe Chilito. All rights reserved </Copyright>
             </FooterWrapper>
         </FooterContainer>
     )
