@@ -57,13 +57,13 @@ const Experience = () =>{
     return (
         <Container id='Experience'>
             <Wrapper>
-                <Title>Experience</Title>
+                <Title>Experiencia</Title>
                 <Desc
                     style={{
                         marginBottom: '40px',
                     }}
                 >
-                    Mi trabajo como ingeniero multimedia y experiencia en compañias y proyectos
+                    Mi experiencia laboral como ingeniero multimedia con énfasis en desarrollador Full Stack trabajando en diferentes empresas y proyectos.
                 </Desc>
 
                 <VerticalTimeline>
