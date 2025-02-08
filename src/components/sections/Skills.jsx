@@ -126,13 +126,13 @@ const Skills = () => {
     return (
         <Container id='Skills'>
             <Wrapper>
-                <Title>Skills</Title>
+                <Title>Habilidades</Title>
                 <Desc
                     style={{
                         marginBottom: '40px',
                     }}
                 >
-                    Aqui tengo algunas skills qur yo tengo pasado 5 años
+                    Estas son algunas de mis habilidades en las que he estado trabajando durante los últimos años.
                 </Desc>
 
                 <SkillsContainer>

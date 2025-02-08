@@ -134,7 +134,9 @@ const Navbar = () => {
     return (
         <Nav>
             <NavbarContainer>
-            <NavLogo to="/">ChilitoLogo</NavLogo>
+            <NavLogo to="/">
+                <img src="../../src/images/JFC.png" alt="Logo" style={{ height: "45px" }} />
+            </NavLogo>
 
             <MobileIcon onClick={() => setIsOpen(!isOpen)}>
                 <MenuRounded style={{color: 'inherit'}}/>
@@ -142,7 +144,7 @@ const Navbar = () => {
 
             <NavItems>
                 <NavLink href="#About">Acerca de mi</NavLink>
-                <NavLink href="#Skills">Skills</NavLink>
+                <NavLink href="#Skills">Habilidades</NavLink>
                 <NavLink href="#Experience">Experiencia</NavLink>
                 <NavLink href="#Projects">Proyectos</NavLink>
                 <NavLink href="#Education">Educación</NavLink>
