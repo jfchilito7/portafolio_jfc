@@ -86,7 +86,9 @@ const Footer = () => {
     return (
         <FooterContainer>
             <FooterWrapper>
-                <Logo>Juan Chilito Logo</Logo>
+                <Logo>
+                    <img src="../../src/images/JFC.png" alt="Logo" style={{ height: "45px" }} />
+                </Logo>
                 <Nav>
                     <NavLink href="#About">Acerca de mi</NavLink>
                     <NavLink href="#Skills">Skills</NavLink>

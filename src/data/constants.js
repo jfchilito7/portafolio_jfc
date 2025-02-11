@@ -218,12 +218,19 @@ export const experiences = [
         },
         {
             id: 2,
-            img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
-            school: "Methodist School, Dankuni",
-            date: "Apr 2017 - Apr 2019",
-            grade: "92.3%",
-            desc: "I completed my class 10 education at Methodist School, Dankuni, where I studied Science with Computer Application.",
-            degree: "ICSC(X), Science with Computer",
+            img: "../../src/images/Scrum.jpg",
+            school: "CertiProf",
+            date: "Abril 2024",
+            desc: "",
+            degree: "SCRUM MASTER PROFESSIONAL CERTIFICATE - SMPC Ⓡ",
+        },
+        {
+            id: 3,
+            img: "../../src/images/Scrum-product-owner.jpg",
+            school: "CertiProf",
+            date: "Abril 2024",
+            desc: "",
+            degree: "SCRUM PRODUCT OWNER PROFESSIONAL CERTIFICATE - SPOPC Ⓡ",
         },
     ];
 
