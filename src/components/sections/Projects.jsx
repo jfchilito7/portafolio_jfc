@@ -140,14 +140,11 @@ const Projects = () => {
                     </ToggleButton>
                 </ToggleButtonGroup>
                 <CardContainer>
-                    {toggle === 'all' && 
-                        projects.map((project, index) => 
-                        <ProjectCard key={`project-${index}`} project={project} />)}
                     {projects
-                        .filter((project) => project.category === toggle)
-                        .map((project, index) => ( 
-                        <ProjectCard key={`filtered-project-${index}`} project={project} />
-                    ))}
+                        .filter((project) => toggle === 'all' || project.category === toggle)
+                        .map((project, index) => (
+                            <ProjectCard key={`project-${index}`} project={project} />
+                        ))}
                 </CardContainer>
             </Wrapper>
         </Container>

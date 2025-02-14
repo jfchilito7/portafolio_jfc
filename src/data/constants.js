@@ -336,7 +336,7 @@ export const experiences = [
         image:
             "https://github.com/rishavchanda/Brain-Tumor-Detection/raw/main/Readme_resource/Image2.png",
         tags: ["Python", "Keras", "TensorFlow", "VGG16", "Pickle", "React"],
-        category: "machine learning",
+        category: "Design",
         github: "https://github.com/rishavchanda/Brain-Tumor-Detection",
         webapp: "https://brain-tumor.netlify.app/",
         member: [
@@ -363,7 +363,7 @@ export const experiences = [
         image:
             "https://user-images.githubusercontent.com/64485885/255237090-cf798a2c-1b41-4bb7-b904-b5353a1f08e8.png",
         tags: ["React Native", "JavaScript", "Axios"],
-        category: "android app",
+        category: "Mobile app",
         github: "https://github.com/rishavchanda/Job-finder-App",
         webapp: "https://github.com/rishavchanda/Job-finder-App",
     },
@@ -389,7 +389,7 @@ export const experiences = [
         image:
             "https://github-production-user-asset-6210df.s3.amazonaws.com/64485885/239726262-c1b061d1-d9d0-42ef-9f1c-0412d14bc4f6.gif",
         tags: ["Java", "Android Studio", "Firebase", "Google Auth"],
-        category: "android app",
+        category: "Mobile app",
         github: "https://github.com/rishavchanda/Quiz-Earn",
         webapp: "https://github.com/rishavchanda/Quiz-Earn",
         },
