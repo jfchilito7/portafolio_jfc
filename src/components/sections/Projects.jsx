@@ -103,7 +103,7 @@ const CardContainer = styled.div`
 const Projects = () => {
     const [toggle, setToggle] = useState('all');
     return (
-        <Container id='Projects'>
+        <Container id='Proyectos'>
             <Wrapper>
                 <Title>Proyectos</Title>
                 <Desc 

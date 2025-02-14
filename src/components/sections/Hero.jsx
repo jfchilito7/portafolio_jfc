@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { BioData } from '../../data/constants';
 import Typewriter from 'typewriter-effect';
-import HeroImage from '../../images/HeroImage.PNG';
+import HeroImage from '../../images/HeroImage.avif';
 import HeroBgAnimation from '../HeroBgAnimation'
 import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
@@ -26,7 +26,7 @@ const HeroContainer = styled.div`
     clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
 `;
 const HeroInnerContainer = styled.div`
-    positoion: relative;
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,7 +71,7 @@ const HeroRightContainer = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-buttom: 80px;
+        margin-bottom: 80px;
     }
 
     @media screen and (max-width: 640px) {
@@ -123,7 +123,7 @@ const Span = styled.div `
 const SubTitle = styled.div`
     font-size: 20px;
     line-height: 32px;
-    margin-buttom: 42px;
+    margin-bottom: 42px;
     color: ${({theme}) => theme.text_primary + 95};
 
     @media screen and (max-width: 960px) {
@@ -207,7 +207,7 @@ const HeroBg = styled.div `
 
 const Hero = () => {
     return (
-        <div id='About'>
+        <div id='Sobre mi'>
             <HeroContainer>
                 <HeroBg>
                     <StarsCanvas />
@@ -238,7 +238,7 @@ const Hero = () => {
                                 <SubTitle>{BioData.description}</SubTitle>
                             </motion.div>
                             
-                            <ResumeButton href={BioData.resume} target='_blank'>Descargar CV</ResumeButton>
+                            <ResumeButton href={BioData.resume} target='_blank' rel='noopener noreferrer'>Descargar CV</ResumeButton>
                         </HeroLeftContainer>
                         <HeroRightContainer>
 

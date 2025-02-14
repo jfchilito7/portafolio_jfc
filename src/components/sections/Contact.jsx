@@ -56,7 +56,7 @@ const ContactForm = styled.div`
     display: flex;
     flex-direction: column;
     background-color: rgba(17, 25, 40, 0.83);
-    border: 1px solid rbga(255, 255, 255, 0.125);
+    border: 1px solid rgba(255, 255, 255, 0.125);
     padding: 32px;
     border-radius: 12px;
     box-shadow: rgba(23, 92, 230, 0.1) 0px 4px 24px;
@@ -100,7 +100,7 @@ const ContactInputMessage = styled.textarea`
 `;
 
 const ContactButton = styled.input`
-    witdh: 100%;
+    width: 100%;
     text-decoration: none;
     text-align: center;
     background: hsla(271, 100%, 50%, 1);
@@ -129,6 +129,12 @@ const Contact = () => {
             return;
         }
 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(fromEmail)) {
+            alert('Por favor, ingresa un email válido.');
+            return;
+        }
+
         emailjs
             .sendForm(
                 'service_sbli6mc',
@@ -148,7 +154,7 @@ const Contact = () => {
     };
 
     return (
-        <Container id='Education'>
+        <Container id='contact'>
             <Wrapper>
                 <Title>Contacto</Title>
                 <Desc
@@ -158,13 +164,13 @@ const Contact = () => {
                 >
                     Si tienes alguan pregunta para mi o quieres contactarme, no dudes en hacerlo.
                 </Desc>
-                <ContactForm onSubmit={handleSubmit}>
+                <ContactForm ref={form} onSubmit={handleSubmit}>
                     <ContactTitle>Contactame </ContactTitle>
                     <ContactInput placeholder="Tu Email" name='from_email' />
                     <ContactInput placeholder="Tu Nombre" name='from_name' />
                     <ContactInput placeholder="Asunto" name='subject' />
                     <ContactInputMessage placeholder="Mensaje" name='message' rows={4} />
-                    <ContactButton type='submit' value='sent' />
+                    <ContactButton type='submit' value='Enviar' />
                 </ContactForm>
 
             </Wrapper>

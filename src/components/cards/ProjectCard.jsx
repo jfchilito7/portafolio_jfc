@@ -104,11 +104,14 @@ const Button = styled.a`
     text-align: center;
 `;
 
-const ProjectCard = ({ project = { member: []} }) => {
+const ProjectCard = ({ project }) => {
+    if (!project) return null;
     return (
         <Card>
-            <Image src={project.image} alt={`Imagen del proyecto ${project.title}`} 
-            // onError={(e) => {e.target.src= '../../images/HeroImage.PNG'}} />
+            <Image 
+                src={project.image || 'fallback-image.png'} 
+                alt={`Imagen del proyecto ${project.title || 'Desconocido'}`} 
+                onError={(e) => { e.target.src = 'fallback-image.png'; }} 
             />
             <Tags></Tags>
             <Details>
@@ -116,11 +119,13 @@ const ProjectCard = ({ project = { member: []} }) => {
                 <Date>{project.date}</Date>
                 <Description>{project.description}</Description>
             </Details>
-            <Members>
-                {project.member?.map((member, index) => (
-                    <Avatar key={index} src={member.img} alt='Avatar del miembro' />
-                ))}
-            </Members>
+            {Array.isArray(project.member) && project.member.length > 0 && (
+                <Members>
+                    {project.member.map((member, index) => (
+                        <Avatar key={index} src={member.img || 'fallback-avatar.png'} alt='Avatar del miembro' />
+                    ))}
+                </Members>
+            )}
             <Button href={project.github} target='_blank'>
                 Ver codigo
             </Button>
@@ -130,17 +135,17 @@ const ProjectCard = ({ project = { member: []} }) => {
 
 ProjectCard.propTypes = {
     project: PropTypes.shape({
-        image: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        date: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        github: PropTypes.string.isRequired,
+        image: PropTypes.string,
+        title: PropTypes.string,
+        date: PropTypes.string,
+        description: PropTypes.string,
+        github: PropTypes.string,
         member: PropTypes.arrayOf(
             PropTypes.shape({
-                img: PropTypes.string.isRequired,
+                img: PropTypes.string,
             })
         ),  
-    }).isRequired,
+    }),
 };
 
 export default ProjectCard

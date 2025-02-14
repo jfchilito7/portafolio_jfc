@@ -84,15 +84,18 @@ const Grade = styled.div`
 const EducationCard = ({ education }) => {
     return (
         <VerticalTimelineElement
-            icon={
-                <img
-                    width="100%"
-                    height="100%"
-                    alt={education?.school || 'School logo'}
-                    style={{ borderRadius: '50%', objectFit: 'cover' }}
-                    src={education?.img}
-                />
-            }
+        icon={
+            <div
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '50%',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundImage: `url(${education?.img ?? ''})`,
+                }}
+            />
+        }
             contentStyle={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -107,13 +110,13 @@ const EducationCard = ({ education }) => {
             contentArrowStyle={{
                 borderRight: '7px solid  rgba(255, 255, 255, 0.3)',
             }}
-            date={education?.date}
+            date={education?.date ?? ''}
         >
             <Top>
-                <Image src={education?.img} alt={education?.school || 'School logo'} />
+                {education?.img && <Image src={education.img} alt={education?.school ?? 'School logo'} />}
                 <Body>
-                    <School>{education?.school}</School>
-                    <Degree>{education?.degree}</Degree>
+                    <School>{education?.school ?? 'Unknown School'}</School>
+                    <Degree>{education?.degree ?? 'No degree specified'}</Degree>
                     <Date>{education?.date}</Date>
                 </Body>
             </Top>

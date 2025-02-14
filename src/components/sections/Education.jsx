@@ -1,10 +1,11 @@
-import React from 'react'
+import { lazy, Suspense} from 'react'
 import styled from 'styled-components'
 import { VerticalTimeline } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { education } from '../../data/constants';
 import EducationCard from '../cards/EducationCard';
-import EarthCanvas from '../canvas/Earth';
+
+const EarthCanvas = lazy(() => import('../canvas/Earth'));
 
 const Container = styled.div`
     display: flex;
@@ -56,7 +57,7 @@ const Desc = styled.div`
 
 const Education = () =>{
     return (
-        <Container id='Education'>
+        <Container id='Educación'>
             <Wrapper>
                 <Title>Educación</Title>
                 <Desc
@@ -75,7 +76,9 @@ const Education = () =>{
                         />
                     ))}
                 </VerticalTimeline>
-                <EarthCanvas />
+                <Suspense fallback={<div>Cargando...</div>}>
+                    <EarthCanvas />
+                </Suspense>
             </Wrapper>
         </Container>
     )

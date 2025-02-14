@@ -101,14 +101,17 @@ const ExperienceCard = ({ experience }) => {
     return (
         <VerticalTimelineElement
             icon={
-            <img 
-                width = '100%'
-                height = '100%'
-                alt={`Logo de ${experience?.company}`}
-                style={{borderRadius: '50%', objectFit: 'cover'}}
-                src={experience?.img}
-            />
-        }
+                <div
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: '50%',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundImage: `url(${experience?.img ?? ''})`,
+                    }}
+                />
+            }
         contentStyle={{
             display: 'flex',
             flexDirection: 'column',
@@ -124,13 +127,13 @@ const ExperienceCard = ({ experience }) => {
         contentArrowStyle={{
             borderRight: '7px solid  rgba(255, 255, 255, 0.3)',
         }}
-        date={experience?.date}
+        date={experience?.date ?? ''}
         >
             <Top>
-                <Image src={experience?.img} alt={`Logo de ${experience?.company}`} />
+                {experience?.img && <Image src={experience.img} alt={`Logo de ${experience?.company}`} />}
                 <Body>
-                    <Role>{experience?.role}</Role>
-                    <Company>{experience?.company}</Company>
+                    <Role>{experience?.role ?? 'Unknown Role'}</Role>
+                    <Company>{experience?.company ?? 'Unknown Company'}</Company>
                     <Date>{experience?.date}</Date>
                 </Body>
             </Top>

@@ -9,7 +9,7 @@ export const BioData = {
     description:
         'Soy una persona motivada y versátil, siempre dispuesto a enfrentar nuevos desafíos. Con una pasión por el aprendizaje, estoy comprometido a ofrecer resultados de alta calidad. Con una actitud positiva y una mentalidad de crecimiento, estoy listo para hacer una contribución significativa y alcanzar grandes metas.',
     github: 'https://github.com/jfchilito7',
-    resume: 'https://drive.google.com/file/d/1zVFqJz9E67suEiew63T_8_7D2TgugeF1/view',
+    resume: 'https://drive.google.com/file/d/1rRpfipPOTP2lVPD1DdCTVcCjjTqdyhm5/view?usp=sharing',
     linkedin: 'https://www.linkedin.com/in/juan-chilito/',
     instagram: 'https://www.instagram.com/juanfelipe_chilito/',
 };
@@ -183,7 +183,7 @@ export const experiences = [
     },
     {
         id: 2,
-        img: "../../src/images/Uv.jpg",
+        img: "../../src/images/Uv.avif",
         role: "Desarrollador Web",
         company: "La Ciudad Fuera del Mapa | Facultad Arquitectura Univalle",
         date: "Junio 2023 - Agosto 2023",
@@ -202,7 +202,7 @@ export const experiences = [
     export const education = [
         {
             id: 0,
-            img: "../../src/images/uaoLogo.png",
+            img: "../../src/images/uaoLogo.avif",
             school: "Universidad Autónoma de Occidente",
             date: "2017 - 2023",
             desc: "Soy ingeniero de multimedia, graduado de la Institución Universitaria Autónoma de Occidente. Durante mis 10 semestres de formación, adquirí conocimientos en desarrollo e ingeniería, participando en diversos proyectos y equipos de trabajo.",
@@ -210,7 +210,7 @@ export const experiences = [
         },
         {
             id: 1,
-            img: "../../src/images/uaoLogo.png",
+            img: "../../src/images/uaoLogo.avif",
             school: "Universidad Autónoma de Occidente",
             date: "2022 - 2024",
             desc: "Soy especialista en Gerencia de Proyectos, graduado de la Universidad Autónoma de Occidente. Durante mi formación, desarrollé habilidades en planificación, gestión y liderazgo de proyectos, participando en diversas iniciativas y equipos de trabajo.",
@@ -218,7 +218,7 @@ export const experiences = [
         },
         {
             id: 2,
-            img: "../../src/images/Scrum.jpg",
+            img: "../../src/images/Scrum.avif",
             school: "CertiProf",
             date: "Abril 2024",
             desc: "",
@@ -226,7 +226,7 @@ export const experiences = [
         },
         {
             id: 3,
-            img: "../../src/images/Scrum-product-owner.jpg",
+            img: "../../src/images/Scrum-product-owner.avif",
             school: "CertiProf",
             date: "Abril 2024",
             desc: "",
@@ -355,19 +355,6 @@ export const experiences = [
         ],
         },
     {
-        id: 3,
-        title: "Buckoid",
-        date: "Dec 2021 - Apr 2022",
-        description:
-            "App Is Currently In Playstore 100+ Downloads. This Project proposes an “Expense Tracking App”. Keep track of your personal expenses and compare them to your monthly income with the budget planner. It has Google Drive Cloud API for Backup of User Room Database. Made with Kotlin in MVVM Architecture & Live Data.",
-        image:
-            "https://camo.githubusercontent.com/3ad28aa710d18525f1fc87de056ed53c706d09979589bfd5a773df36653bad38/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f6c6f67696e2d65613565322e61707073706f742e636f6d2f6f2f4255434b4f49442532302831292e706e673f616c743d6d6564696126746f6b656e3d32653735376235372d323964372d346263612d613562322d653164346538313432373435",
-        tags: ["Kotlin", "MVVM", "Room Database", "Google Drive Cloud API"],
-        category: "android app",
-        github: "https://github.com/rishavchanda/Buckoid-Android-App",
-        webapp: "https://play.google.com/store/apps/details?id=com.rishav.buckoid",
-    },
-    {
         id: 10,
         title: "Job Finding App",
         date: "Jun 2023 - Jul 2023",
@@ -394,32 +381,6 @@ export const experiences = [
         webapp: "https://whatsapp-clone-rishav.web.app",
         },
     {
-        id: 5,
-        title: "Todo Web App",
-        date: "Jun 2021",
-        description:
-            " A Todo Web App made with React JS, Redux, and Material UI. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the tasks and can create a new task. It has a calendar where users can see all the tasks on a particular date. It has a search bar where users can search for a particular task.",
-        image:
-            "https://camo.githubusercontent.com/84ac6ab6f378348ef28d8184062b7e9e3511a1252ae3966eaa49e8e998f732a7/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f74253230283938292e706e673f616c743d6d6564696126746f6b656e3d33643335646366322d626666322d343730382d393031632d343232383866383332386633",
-        tags: ["React Js", "Local Storage", "AWS Auth", "Node JS"],
-        category: "web app",
-        github: "https://github.com/rishavchanda/Todo-Web-App",
-        webapp: "https://rishav-react-todo.netlify.app/",
-        },
-    {
-        id: 6,
-        title: "Breaking Bad",
-        date: "Jun 2021",
-        description:
-            "A simple react app that shows the characters of the famous TV series Breaking Bad. It uses the Breaking Bad API to fetch the data. It also has a search bar to search for a particular character.",
-        image:
-            "https://camo.githubusercontent.com/937774368308a82419f53dd6eeb4a8675780e119636488b4e3cfe5d34859a72a/68747470733a2f2f666972656261736573746f726167652e676f6f676c65617069732e636f6d2f76302f622f746f646f2d6170702d63386331392e61707073706f742e636f6d2f6f2f53637265656e73686f7425323028313534292e706e673f616c743d6d6564696126746f6b656e3d65613439383630632d303435362d343333342d616435372d336239346663303333363263",
-        tags: ["React Js", "API", "Axios", "Node JS"],
-        category: "web app",
-        github: "https://github.com/rishavchanda/Breaking-Bad",
-        webapp: "https://breaking-bad-webapp.netlify.app",
-        },
-    {
         id: 7,
         title: "Quiz App",
         date: "Dec 2020 - Jan 2021",
@@ -431,19 +392,6 @@ export const experiences = [
         category: "android app",
         github: "https://github.com/rishavchanda/Quiz-Earn",
         webapp: "https://github.com/rishavchanda/Quiz-Earn",
-        },
-    {
-        id: 8,
-        title: "Face Recognition",
-        date: "Jan 2021",
-        description:
-            "A Face recognition python app made with OpenCV. It uses face_recognition library to detect faces. It uses the webcam to detect faces. It also has a search bar to search for a particular face.",
-        image:
-            "https://dontrepeatyourself.org/media/face-recognition-with-python-dlib-and-deep-learning_cezKZBj.png",
-        tags: ["Python", "Keras", "TensorFlow", "VGG16", "Pickle", "React"],
-        category: "machine learning",
-        github: "https://github.com/rishavchanda/Face-Recodnition-AI-with-Python",
-        webapp: "https://github.com/rishavchanda/Face-Recodnition-AI-with-Python",
         },
     ];
     export const TimeLineData = [

@@ -87,7 +87,7 @@ const Footer = () => {
         <FooterContainer>
             <FooterWrapper>
                 <Logo>
-                    <img src="../../src/images/JFC.png" alt="Logo" style={{ height: "45px" }} />
+                    <img src="../../src/images/JFC.png" alt="Logo" style={{ width:"120px", height: "45px" }} />
                 </Logo>
                 <Nav>
                     <NavLink href="#About">Acerca de mi</NavLink>

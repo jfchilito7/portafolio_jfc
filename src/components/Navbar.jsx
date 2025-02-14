@@ -2,7 +2,8 @@ import { Link as LinkR } from "react-router-dom";
 import styled, { useTheme } from "styled-components";
 import { BioData } from "../data/constants";
 import { MenuRounded } from "@mui/icons-material";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import Logo from '../images/JFC.png';
 
 
 const Nav = styled.div `
@@ -128,45 +129,51 @@ const MobileMenu = styled.ul`
     z-index: ${({ isOpen }) => (isOpen ? '1000' : '-1000')};
 `;
 
+const GithubButtonComponent = () => (
+    <GithubButton href={BioData.github} target='_blank'>
+        Github Perfil
+    </GithubButton>
+);
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const theme = useTheme();
+    
+    const mobileMenu = useMemo(
+        () => (
+            <MobileMenu isOpen={isOpen}>
+                {['Sobre mi', 'Habilidades', 'Experiencia', 'Proyectos', 'Educación'].map((item) => (
+                    <NavLink key={item} onClick={() => setIsOpen(false)} href={`#${item}`}>
+                        {item}
+                    </NavLink>
+))}
+                <GithubButtonComponent />
+            </MobileMenu>
+        ),
+        [isOpen]
+    )
+    
     return (
-        <Nav>
+        <Nav role="navigation">
             <NavbarContainer>
             <NavLogo to="/">
-                <img src="../../src/images/JFC.png" alt="Logo" style={{ height: "45px" }} />
+                <img src={Logo} alt="Logo" loading="lazy" style={{ width: "120px", height: "45px" }} />
             </NavLogo>
 
-            <MobileIcon onClick={() => setIsOpen(!isOpen)}>
-                <MenuRounded style={{color: 'inherit'}}/>
+            <MobileIcon onClick={() => setIsOpen(!isOpen)} aria-label="Abrir menú">
+                <MenuRounded />
             </MobileIcon>
 
             <NavItems>
-                <NavLink href="#About">Acerca de mi</NavLink>
-                <NavLink href="#Skills">Habilidades</NavLink>
-                <NavLink href="#Experience">Experiencia</NavLink>
-                <NavLink href="#Projects">Proyectos</NavLink>
-                <NavLink href="#Education">Educación</NavLink>
+                {['Sobre mi', 'Habilidades', 'Experiencia', 'Proyectos', 'Educación'].map((item) => (
+                    <NavLink key={item} onClick={() => setIsOpen(false)} href={`#${item}`}>
+                        {item}
+                    </NavLink>
+))}
             </NavItems>
 
-            {
-                isOpen && (
-                <MobileMenu isOpen={isOpen}>
-                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#About">Acerca de mi</NavLink>
-                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#Skills">Skills</NavLink>
-                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#Experience">Experiencia</NavLink>
-                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#projects">Proyectos</NavLink>
-                    <NavLink onClick={() => setIsOpen(!isOpen)} href="#Education">Educación</NavLink>
-                    <GithubButton href={BioData.github} 
-                    target="_Blank"
-                    style={{background: theme.primary, color: theme.text_primary}}
-                    >Github Profile</GithubButton>
-                </MobileMenu>
-                )
-            }
+            {isOpen && mobileMenu} 
             <ButtonContainer>
-                <GithubButton href={BioData.github} target="_Blank">Github Profile</GithubButton>
+                <GithubButtonComponent />
             </ButtonContainer>
         </NavbarContainer>
         </Nav>

@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { skills } from '../../data/constants';
-import { Tilt } from 'react-tilt';
 
 const Container = styled.div`
     display: flex;
@@ -25,7 +24,7 @@ const Wrapper = styled.div`
     }
 `;
 
-const Title = styled.div`
+const Title = styled.h2`
     font-size: 52px;
     text-align: center;
     font-weight: 600;
@@ -38,7 +37,7 @@ const Title = styled.div`
     }
 `;
 
-const Desc = styled.div`
+const Desc = styled.p`
     font-size: 18px;
     text-align: center;
     font-weight: 600;
@@ -124,38 +123,31 @@ const SkillImage = styled.img`
 
 const Skills = () => {
     return (
-        <Container id='Skills'>
+        <Container id="Habilidades">
             <Wrapper>
                 <Title>Habilidades</Title>
-                <Desc
-                    style={{
-                        marginBottom: '40px',
-                    }}
-                >
+                <Desc>
                     Estas son algunas de mis habilidades en las que he estado trabajando durante los últimos años.
                 </Desc>
 
                 <SkillsContainer>
                     {skills.map((skill, index) => (
-                        <Tilt key={`skill=${index}`}>
-                            <Skill key={`skill -${index}`}>
+                        <Skill key={index}>
                             <SkillTitle>{skill.title}</SkillTitle>
                             <SkillList>
-                                {skill.skills.map((item, index_x) => (
-                                    <SkillItem key={`skill-x-${index_x}`}>
-                                        <SkillImage src={item.image} alt={item.name} />
+                                {skill.skills.map((item, idx) => (
+                                    <SkillItem key={idx}>
+                                        <SkillImage src={item.image} alt={item.name || "Skill"} />
                                         {item.name}
                                     </SkillItem>
                                 ))}
                             </SkillList>
                         </Skill>
-                        </Tilt>
-                        
                     ))}
                 </SkillsContainer>
             </Wrapper>
         </Container>
-    )
-}
+    );
+};
 
-export default Skills
+export default Skills;
