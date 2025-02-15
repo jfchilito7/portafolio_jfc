@@ -21,10 +21,12 @@ const HeroContainer = styled.div`
 
     @media screen and (max-width: 640px) {
         padding: 32px 16px;
+        clip-path: none; /* Desactivar en móviles */
     }
 
     clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 95%, 0 100%);
 `;
+
 const HeroInnerContainer = styled.div`
     position: relative;
     display: flex;
@@ -48,6 +50,7 @@ const HeroLeftContainer = styled.div`
         flex-direction: column;
         gap: 6px;
         align-items: center;
+    }
 
     @media screen and (max-width: 640px) {
         order: 2;
@@ -55,7 +58,6 @@ const HeroLeftContainer = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
     }
 `;
 const HeroRightContainer = styled.div`
@@ -86,13 +88,10 @@ const Title = styled.div `
     line-height: 68px;
 
     @media screen and (max-width: 960px) {
-        text-align: center;
-    }
-
-    @media screen and (max-width: 960px) {
         font-size: 40px;
         line-height: 48px;
         margin-bottom: 8px;
+        text-align: center;
     }
 `;
 
@@ -105,13 +104,10 @@ const TextLoop = styled.div `
     gap: 12px;
 
     @media screen and (max-width: 960px) {
-        text-align: center;
-    }
-
-    @media screen and (max-width: 960px) {
         font-size: 22px;
         line-height: 48px;
         margin-bottom: 16px;
+        text-align: center;
     }
 `;
 
@@ -127,12 +123,9 @@ const SubTitle = styled.div`
     color: ${({theme}) => theme.text_primary + 95};
 
     @media screen and (max-width: 960px) {
-        text-align: center;
-    }
-
-    @media screen and (max-width: 960px) {
         font-size: 16px;
         line-height: 32px;
+        text-align: center;
     }
 `;
 
@@ -151,8 +144,7 @@ const ResumeButton = styled.a `
     font-weight: 600;
     font-size: 20px;
     color: white;
-    z-index: 10;
-    position: relative;
+    border: 2px solid ${({ theme }) => theme.primary};
 
     &:hover {
         transform: scale(1.05);

@@ -1,10 +1,9 @@
 
-import { Suspense, lazy  } from 'react';
-import styled, { ThemeProvider} from 'styled-components';
+import { Suspense, lazy, memo  } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme } from './utils/Themes';
 import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
-
 const Hero = lazy(() => import('./components/sections/Hero'));
 const Skills = lazy(() => import('./components/sections/Skills'));
 const Experience = lazy(() => import('./components/sections/Experience'));
@@ -43,36 +42,29 @@ const Wrapper = styled.div`
 
 
 function App() {
-
   return (
-    <>
-      <ThemeProvider theme={darkTheme}>
-        <BrowserRouter>
-          <Navbar />
-          <Body>
-            <Suspense fallback={<div>Cargando...</div>}>
-              <Suspense fallback={<div>Cargando...</div>}>
-                <StartCanvas />
-              </Suspense>
-              <div>
-                <Hero />
-                <Wrapper>
-                  <Skills />
-                  <Experience />
-                </Wrapper>
-                <Projects />
-                <Wrapper>
-                  <Education />
-                  <Contact />
-                </Wrapper>
-                <Footer />
-              </div>
-            </Suspense>
-          </Body>
-        </BrowserRouter>
-      </ThemeProvider>
-    </>
-  )
+    <ThemeProvider theme={darkTheme}>
+      <BrowserRouter>
+        <Navbar />
+        <Body>
+          <Suspense fallback={<div>Cargando...</div>}>
+            <StartCanvas />
+            <Hero />
+            <Wrapper>
+              <Skills />
+              <Experience />
+            </Wrapper>
+            <Projects />
+            <Wrapper>
+              <Education />
+              <Contact />
+            </Wrapper>
+            <Footer />
+          </Suspense>
+        </Body>
+      </BrowserRouter>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
