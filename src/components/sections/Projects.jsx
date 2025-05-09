@@ -127,11 +127,11 @@ const Projects = () => {
                     >Web app  
                     </ToggleButton>
                     <Divider />
-                    <ToggleButton
+                    {/* <ToggleButton
                         data-active={toggle === 'Mobile app'}
                         onClick={() => setToggle('Mobile app')}
                     >Mobile app
-                    </ToggleButton>
+                    </ToggleButton> */}
                     <Divider />
                     <ToggleButton 
                         data-active={toggle === 'Design'}
