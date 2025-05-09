@@ -1,5 +1,5 @@
 
-import { Suspense, lazy, memo  } from 'react';
+import { Suspense, lazy } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme } from './utils/Themes';
 import { BrowserRouter } from 'react-router-dom';

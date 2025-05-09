@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components'
 import emailjs from '@emailjs/browser';
 
@@ -50,7 +50,7 @@ const Desc = styled.div`
     }
 `;
 
-const ContactForm = styled.div`
+const ContactForm = styled.form`
     width: 95%;
     max-width: 600px;
     display: flex;
@@ -99,7 +99,7 @@ const ContactInputMessage = styled.textarea`
     }
 `;
 
-const ContactButton = styled.input`
+const ContactButton = styled.button`
     width: 100%;
     text-decoration: none;
     text-align: center;
@@ -111,46 +111,57 @@ const ContactButton = styled.input`
     color: ${({theme}) => theme.text_primary};
     font-size: 18px;
     font-weight: 600;
+    cursor: pointer;
 `;
 
 const Contact = () => {
     const form = useRef();
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState('');
+
     const handleSubmit = (e) => {
         e.preventDefault();
+        setLoading(true);
+        setMessage('');
 
-        // Validación simple antes de enviar
         const formData = new FormData(form.current);
-        const fromEmail = formData.get('from_email');
+        const fromEmail = formData.get('email_id');
         const fromName = formData.get('from_name');
+        const subject = formData.get('subject');
         const message = formData.get('message');
 
-        if (!fromEmail || !fromName || !message) {
-            alert('Por favor, completa todos los campos antes de enviar el mensaje.');
+        if (!fromEmail || !fromName || !subject || !message) {
+            setMessage('Por favor, rellena todos los campos antes de enviar.');
+            setLoading(false);
             return;
         }
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(fromEmail)) {
-            alert('Por favor, ingresa un email válido.');
+        const emailRegrex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegrex.test(fromEmail)) {
+            setMessage('Por favor, introduce un email válido.');
+            setLoading(false);
             return;
         }
 
-        emailjs
-            .sendForm(
-                'service_sbli6mc',
-                'template_o7wkxgt',
-                form.current,
-                'GjC0VfLq-EpaC9pJ8'
-            )
-            .then(
-                (result) => {
-                    alert('Mensaje enviado correctamente');
-                    form.current.reset(); // Reinicia el formulario tras enviarlo
-                },
-                (error) => {
-                    alert('Ocurrió un error al enviar el mensaje. Inténtalo de nuevo.');
-                }
-            );
+        emailjs.sendForm(
+            'service_xgvjvvj', // Service ID
+            'template_086tbbd', // Template ID
+            form.current,
+            'tBqLGJjNE4BYNPAo9' // public key
+        )
+        .then(
+            () => {
+                setMessage('Tu mensaje ha sido enviado con éxito. ¡Gracias por contactarme!');
+                form.current.reset();
+            },
+            (error) => {
+                console.error('Error al enviar mensaje:', error);
+                setMessage('Error al enviar mensaje. Por favor, inténtalo de nuevo.');
+            }
+        )
+        .finally(() => {
+            setLoading(false);
+        });
     };
 
     return (
@@ -166,13 +177,15 @@ const Contact = () => {
                 </Desc>
                 <ContactForm ref={form} onSubmit={handleSubmit}>
                     <ContactTitle>Contactame </ContactTitle>
-                    <ContactInput placeholder="Tu Email" name='from_email' />
-                    <ContactInput placeholder="Tu Nombre" name='from_name' />
-                    <ContactInput placeholder="Asunto" name='subject' />
+                    <ContactInput placeholder="Tu Email" name='email_id' type='email' />
+                    <ContactInput placeholder="Tu Nombre" name='from_name' type='text' />
+                    <ContactInput placeholder="Asunto" name='subject' type='text' />
                     <ContactInputMessage placeholder="Mensaje" name='message' rows={4} />
-                    <ContactButton type='submit' value='Enviar' />
+                    <ContactButton type='submit' id='button' disabled={loading}>
+                        {loading ? 'Enviando...' : 'Enviar Mensaje'}
+                    </ContactButton>
+                    {message && <p style={{ color: '#fff', textAlign: 'center'}}>{message}</p>}
                 </ContactForm>
-
             </Wrapper>
         </Container>
     )

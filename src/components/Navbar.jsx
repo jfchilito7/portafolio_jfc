@@ -1,5 +1,5 @@
 import { Link as LinkR } from "react-router-dom";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 import { BioData } from "../data/constants";
 import { MenuRounded } from "@mui/icons-material";
 import { useState, useMemo } from "react";

@@ -30,12 +30,15 @@ const Image = styled.img`
 `;
 
 const Tags = styled.div`
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 4px;
+    font-size: 12px;
+    margin-left: 2px;
+    font-weight: 400;
+    margin-top: 8px;
+    color: ${({theme}) => theme.text_secondary + 80};
+
+    @media screen and (max-width: 768px) {
+        font-size: 10px;
+    }
 `;
 
 const Details = styled.div`
@@ -107,29 +110,38 @@ const Button = styled.a`
 const ProjectCard = ({ project }) => {
     if (!project) return null;
     return (
-        <Card>
-            <Image 
-                src={project.image || 'fallback-image.png'} 
-                alt={`Imagen del proyecto ${project.title || 'Desconocido'}`} 
-                onError={(e) => { e.target.src = 'fallback-image.png'; }} 
-            />
-            <Tags></Tags>
-            <Details>
-                <Title>{project.title}</Title>
-                <Date>{project.date}</Date>
-                <Description>{project.description}</Description>
-            </Details>
-            {Array.isArray(project.member) && project.member.length > 0 && (
-                <Members>
-                    {project.member.map((member, index) => (
-                        <Avatar key={index} src={member.img || 'fallback-avatar.png'} alt='Avatar del miembro' />
-                    ))}
-                </Members>
-            )}
-            <Button href={project.github} target='_blank'>
-                Ver codigo
-            </Button>
-        </Card>
+        <a href={project.webapp} target='_blank' rel='noopener noreferrer' style={{ textDecoration: 'none' }}>
+            <Card>
+                <Image
+                    src={project.image || 'fallback-image.png'} 
+                    alt={`Imagen del proyecto ${project.title || 'Desconocido'}`} 
+                    onError={(e) => { e.target.src = 'fallback-image.png'; }} 
+                />
+
+                <Details>
+                    <Title>{project.title}</Title>
+                    <Date>{project.date}</Date>
+                    <Description>{project.description}</Description>
+                    <Tags>
+                        {project.tags.map((tag, index) => (
+                            <span key={index} className='tag'>
+                                {tag}
+                            </span>
+                        ))}
+                    </Tags>
+                </Details>
+                {Array.isArray(project.member) && project.member.length > 0 && (
+                    <Members>
+                        {project.member.map((member, index) => (
+                            <Avatar key={index} src={member.img || 'fallback-avatar.png'} alt='Avatar del miembro' />
+                        ))}
+                    </Members>
+                )}
+                <Button href={project.github} target='_blank'>
+                    Ver codigo
+                </Button>
+            </Card>
+        </a>
     )
 }
 
@@ -139,7 +151,9 @@ ProjectCard.propTypes = {
         title: PropTypes.string,
         date: PropTypes.string,
         description: PropTypes.string,
+        tags: PropTypes.arrayOf(PropTypes.string),
         github: PropTypes.string,
+        webapp: PropTypes.string,
         member: PropTypes.arrayOf(
             PropTypes.shape({
                 img: PropTypes.string,

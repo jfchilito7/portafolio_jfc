@@ -236,162 +236,74 @@ export const experiences = [
 
     export const projects = [
         {
-        id: 11,
-        title: "DecisionHub",
-        date: "Jan 2024 - Dec 2023",
-        description:
-            "A Rule Builder application “Decision Hub” that empowers Business Analysts to create, save, and visualize decision strategies. Provide a no-code rule writing experience and visual representation to test these rules in real-time and observe the calculations at each step.",
-        image:
-            "https://github.com/rishavchanda/DecisionHub/raw/master/assets/testRule.jpg",
-        tags: [
-            "React Js",
-            "PostgressSQL",
-            "Node Js",
-            "Express Js",
-            "Redux",
-            "React Flow",
-        ],
-        category: "web app",
-        github: "https://github.com/rishavchanda/DecisionHub",
-        webapp: "https://decisionhub.netlify.app/",
-        },
-    {
-        id: 9,
-        title: "Trackify",
-        date: "Jun 2023 - Jul 2023",
-        description:
-            "Trackify is a web application designed to streamline task management and enhance productivity in the workplace. It provides a user-friendly interface for employers to keep track of their employees' daily work activities and empowers employees to log their tasks efficiently. \nAdmin Credentials: # Email: testadmin@gmail.com #Password- 123@testadmin, Employee Credentials:	#Email: testemployee@gmail.com	#Password- 123@Testemployee",
-        image:
-            "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
-        tags: [
-            "Docker",
-            "AWS",
-            "DuckDNS",
-            "Eslint",
-            "Husky",
-            "CI/CD",
-            "React Js",
-            "MongoDb",
-            "Node Js",
-            "Express Js",
-            "Redux",
-        ],
-        category: "web app",
-        github: "https://github.com/rishavchanda/Trackify",
-        webapp: "https://trackify-management.netlify.app/",
-        },
-    {
         id: 0,
-        title: "Podstream",
-        date: "Apr 2023 - May 2023",
+        title: "Popcorn Movies",
+        date: "Nov 2023 - Nov 2023",
         description:
-            "Developed a full-stack web application that allows users to search for, play, and pause their favorite podcasts on demand and create podcasts. Implemented user authentication using Google Auth and Jwt Auth, made responsive user interface with React JS that provides users with a seamless experience across all devices. Practiced agile methodologies to optimize team efficiency and communication.",
+            "Permite a los usuarios descubrir películas populares a través de una interfaz visual y minimalista.",
         image:
-            "https://user-images.githubusercontent.com/64485885/234602896-a1bd8bcc-b72b-4821-83d6-8ad885bf435e.png",
-        tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
+            "https://github.com/jfchilito7/Popcorn-Movies/blob/main/assets/docs/mockup3.png?raw=true",
+        tags: [
+            "HTML5, ",
+            "CSS3, ",
+            "JavaScript (ES6+), ",
+            "API de películas. "
+        ],
         category: "web app",
-        github: "https://github.com/rishavchanda/Podstream",
-        webapp: "https://podstream.netlify.app/",
+        github: "https://github.com/jfchilito7/Popcorn-Movies",
+        webapp: "https://jfchilito7.github.io/Popcorn-Movies/",
+        },
+    {
+        id: 1,
+        title: "Travel Planner",
+        date: "Mar 2025 - Apr 2025",
+        description:
+            "Aplicación web para planear viajes personalizados con ayuda de inteligencia artificial.",
+        image:
+            "https://github.com/jfchilito7/travel-planner/blob/main/public/MOCKUP2.jpeg?raw=true",
+        tags: [
+            "React + Vite, ",
+            "Tailwind, ",
+            "Axios, ",
+            "Recharts & Chart.js, ",
+            "Firebase, ",
+            "OAuth, ",
+            "Google Places API, ",
+            "Node.js",
+        ],
+        category: "web app",
+        github: "https://github.com/jfchilito7/travel-planner",
+        webapp: "https://travel-planner-two-azure.vercel.app/",
+        },
+    {
+        id: 2,
+        title: "Portfolio Template",
+        date: "Sep 2024 - Oct 2024",
+        description:
+            "template portafolio web moderno y personalizable construido con tecnologías actuales.",
+        image:
+            "https://github.com/jfchilito7/juanchilito_portfolio/blob/main/public/assets/inicio.png?raw=true",
+        tags: ["Next.js, ", "JavaScript moderno (ES6+), ", "Vercel, ", "Tailwind",],
+        category: "web app",
+        github: "https://github.com/jfchilito7/juanchilito_portfolio",
+        webapp: "https://juanchilito-portfolio.vercel.app/",
         member: [
-            {
-            name: "Rishav Chanda",
-            img: "https://avatars.githubusercontent.com/u/64485885?v=4",
-            linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-            github: "https://github.com/rishavchanda/",
-            },
-            {
-            name: "Upasana Chaudhuri",
-            img: "https://avatars.githubusercontent.com/u/100614635?v=4",
-            linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-            github: "https://github.com/upasana0710",
-            },
         ],
         },
     {
         id: 1,
-        title: "Vexa",
-        date: "Oct 2022 - Jan 2023",
+        title: "CoinBook",
+        date: "Jan 2023 - Jul 2023",
         description:
-            "Designed and developed the Vexa project, a project management app that helps users and teams stay organized and on track. Implemented key features such as task tracking, team collaboration, and time tracking to improve productivity and project outcomes and also invite team/project members. The plan is to add a community of users where they can find developers and other team members and chat system implementation.",
+            "aplicación que sirva como interfaz de registro de ingresos y gastos.",
         image:
-            "https://user-images.githubusercontent.com/64485885/234916413-96296f13-fe4b-4cc4-b215-e72bd7c27928.png",
+            "https://i.imgur.com/0AxHPTw.png",
         tags: [
-            "React Js",
-            "MongoDb",
-            "Node Js",
-            "Express Js",
-            "Redux",
-            "NodeMailer",
+            "Figma",
         ],
-        category: "web app",
-        github: "https://github.com/rishavchanda/Project-Management-App",
-        webapp: "https://vexa-app.netlify.app/",
-        },
-    {
-        id: 2,
-        title: "Brain Tumor Detection",
-        date: "Jan 2023 - Mar 2023",
-        description:
-            "Preprocessed and augmented the dataset to improve model accuracy, trained the model, created API using model and Python, and used React web app for the project's front end. Achievements: Achieved an accuracy of 99.2% to accurately detect brain tumors from medical images.",
-        image:
-            "https://github.com/rishavchanda/Brain-Tumor-Detection/raw/main/Readme_resource/Image2.png",
-        tags: ["Python", "Keras", "TensorFlow", "VGG16", "Pickle", "React"],
         category: "Design",
-        github: "https://github.com/rishavchanda/Brain-Tumor-Detection",
-        webapp: "https://brain-tumor.netlify.app/",
-        member: [
-            {
-            name: "Rishav Chanda",
-            img: "https://avatars.githubusercontent.com/u/64485885?v=4",
-            linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-            github: "https://github.com/rishavchanda/",
-            },
-            {
-            name: "Upasana Chaudhuri",
-            img: "https://avatars.githubusercontent.com/u/100614635?v=4",
-            linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-            github: "https://github.com/upasana0710",
-            },
-        ],
-        },
-    {
-        id: 10,
-        title: "Job Finding App",
-        date: "Jun 2023 - Jul 2023",
-        description:
-            "A Job Finding App made with React Native, Axios. Users can search for any job coming from API and apply there.",
-        image:
-            "https://user-images.githubusercontent.com/64485885/255237090-cf798a2c-1b41-4bb7-b904-b5353a1f08e8.png",
-        tags: ["React Native", "JavaScript", "Axios"],
-        category: "Mobile app",
-        github: "https://github.com/rishavchanda/Job-finder-App",
-        webapp: "https://github.com/rishavchanda/Job-finder-App",
-    },
-    {
-        id: 4,
-        title: "Whatsapp Clone",
-        date: "Jul 2021",
-        description:
-            "A WhatsApp clone made with React JS, Firebase, and Material UI. It has Phone Authentication, Real-time Database. It has a chat room where users can chat with each other. It has a sidebar where users can see all the chat rooms and can create a new chat room. It has a login page where users can log in with their Google account.",
-        image:
-            "https://firebasestorage.googleapis.com/v0/b/whatsapp-clone-rishav.appspot.com/o/Screenshot%20(151).png?alt=media&token=48391593-1ef0-4a8c-a92a-eb82bdf38e89",
-        tags: ["React Js", "Firebase", "Firestore", "Node JS"],
-        category: "web app",
-        github: "https://github.com/rishavchanda/Whatsapp-Clone-React-Js",
-        webapp: "https://whatsapp-clone-rishav.web.app",
-        },
-    {
-        id: 7,
-        title: "Quiz App",
-        date: "Dec 2020 - Jan 2021",
-        description:
-            "A android quiz app made with Java and Firebase. It has a login page where users can log in with their Google account. It has a sidebar where users can see all the quiz categories and can create a new quiz. It has a leaderboard where users can see the top 10 scorers. It has a search bar where users can search for a particular quiz.",
-        image:
-            "https://github-production-user-asset-6210df.s3.amazonaws.com/64485885/239726262-c1b061d1-d9d0-42ef-9f1c-0412d14bc4f6.gif",
-        tags: ["Java", "Android Studio", "Firebase", "Google Auth"],
-        category: "Mobile app",
-        github: "https://github.com/rishavchanda/Quiz-Earn",
-        webapp: "https://github.com/rishavchanda/Quiz-Earn",
+        github: "https://www.figma.com/design/0lXjpGZbW2mnPS6MgCVbHW/CoinBook1.0?node-id=315-13232&m=dev&t=nwdqke6Frqx7qXtj-1",
+        webapp: "https://www.figma.com/proto/0lXjpGZbW2mnPS6MgCVbHW/CoinBook1.0?node-id=241-9307&p=f&t=NXqnmpPUzymADqim-1&scaling=scale-down&content-scaling=fixed&page-id=4%3A499&starting-point-node-id=227%3A6452",
         },
     ];
     export const TimeLineData = [
