@@ -158,7 +158,6 @@ export const experiences = [
             "CSS",
             "JavaScript",
         ],
-        doc: "",
     },
     {
         id: 1,
@@ -179,7 +178,6 @@ export const experiences = [
             "Node Js",
             "Next Js",
         ],
-        doc: "",
     },
     {
         id: 2,
@@ -195,7 +193,6 @@ export const experiences = [
             "Photoshop",
             "Figma",
         ],
-        doc: "",
     },
     ];
 
