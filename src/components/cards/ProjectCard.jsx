@@ -100,22 +100,52 @@ const Avatar = styled.img`
     border: 3px solid ${({theme}) => theme.card};
 `;
 
-const Button = styled.a`
-    color: ${({theme}) => theme.primary};
-    text-decoration: none;
+const Button = styled.button`
+    align-items: center;
+    gap: 0.5rem;
+    background-color: ${({ theme }) => theme.primary};
+    color: #fff;
+    border: 2px solid ${({ theme }) => theme.primary};
+    padding: 0.5rem 1rem;
     font-weight: 600;
     text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        background-color: #fff;
+        color: ${({ theme }) => theme.primary};
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px ${({ theme }) => theme.primary}50;
+    }
 `;
 
 const ProjectCard = ({ project }) => {
     if (!project) return null;
+
+    const handleCodeClick = (e) => {
+        e.stopPropagation(); // evita que el clic en el botón dispare el enlace del <a> padre
+        window.open(project.github, '_blank', 'noopener,noreferrer');
+    };
+
     return (
-        <a href={project.webapp} target='_blank' rel='noopener noreferrer' style={{ textDecoration: 'none' }}>
+        <a
+            href={project.webapp}
+            target='_blank'
+            rel='noopener noreferrer'
+            style={{ textDecoration: 'none', color: 'inherit' }}
+        >
             <Card>
                 <Image
-                    src={project.image || 'fallback-image.png'} 
-                    alt={`Imagen del proyecto ${project.title || 'Desconocido'}`} 
-                    onError={(e) => { e.target.src = 'fallback-image.png'; }} 
+                    src={project.image || 'fallback-image.png'}
+                    alt={`Imagen del proyecto ${project.title || 'Desconocido'}`}
+                    onError={(e) => {
+                        e.target.src = 'fallback-image.png';
+                    }}
                 />
 
                 <Details>
@@ -130,20 +160,26 @@ const ProjectCard = ({ project }) => {
                         ))}
                     </Tags>
                 </Details>
+
                 {Array.isArray(project.member) && project.member.length > 0 && (
                     <Members>
                         {project.member.map((member, index) => (
-                            <Avatar key={index} src={member.img || 'fallback-avatar.png'} alt='Avatar del miembro' />
+                            <Avatar
+                                key={index}
+                                src={member.img || 'fallback-avatar.png'}
+                                alt='Avatar del miembro'
+                            />
                         ))}
                     </Members>
                 )}
-                <Button href={project.github} target='_blank'>
-                    Ver codigo
+
+                <Button onClick={handleCodeClick} style={{ marginTop: '1rem' }}>
+                    Ver código
                 </Button>
             </Card>
         </a>
-    )
-}
+    );
+};
 
 ProjectCard.propTypes = {
     project: PropTypes.shape({
