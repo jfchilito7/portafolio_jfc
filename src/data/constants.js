@@ -145,7 +145,7 @@ export const skills = [
 export const experiences = [
     {
         id: 0,
-        img: "../../src/images/logo1.jpg",
+        img: "/src/images/logo1.jpg",
         role: "Desarrollador De Contenido Multimedia",
         company: "Bayron Becerra Foundation",
         date: "Junio 2024 - Diciembre 2024",
@@ -162,7 +162,7 @@ export const experiences = [
     },
     {
         id: 1,
-        img: "../../src/images/freelancer.webp",
+        img: "/src/images/freelancer.webp",
         role: "Desarrollador Web Freelance",
         company: "Freelancer.",
         date: "Octubre 2023 - Actualidad",
@@ -183,7 +183,7 @@ export const experiences = [
     },
     {
         id: 2,
-        img: "../../src/images/Uv.avif",
+        img: "/src/images/Uv.avif",
         role: "Desarrollador Web",
         company: "La Ciudad Fuera del Mapa | Facultad Arquitectura Univalle",
         date: "Junio 2023 - Agosto 2023",
@@ -202,7 +202,7 @@ export const experiences = [
     export const education = [
         {
             id: 0,
-            img: "../../src/images/uaoLogo.avif",
+            img: "/src/images/uaoLogo.avif",
             school: "Universidad Autónoma de Occidente",
             date: "2017 - 2023",
             desc: "Soy ingeniero de multimedia, graduado de la Institución Universitaria Autónoma de Occidente. Durante mis 10 semestres de formación, adquirí conocimientos en desarrollo e ingeniería, participando en diversos proyectos y equipos de trabajo.",
@@ -210,7 +210,7 @@ export const experiences = [
         },
         {
             id: 1,
-            img: "../../src/images/uaoLogo.avif",
+            img: "/src/images/uaoLogo.avif",
             school: "Universidad Autónoma de Occidente",
             date: "2022 - 2024",
             desc: "Soy especialista en Gerencia de Proyectos, graduado de la Universidad Autónoma de Occidente. Durante mi formación, desarrollé habilidades en planificación, gestión y liderazgo de proyectos, participando en diversas iniciativas y equipos de trabajo.",
@@ -218,7 +218,7 @@ export const experiences = [
         },
         {
             id: 2,
-            img: "../../src/images/Scrum.avif",
+            img: "/src/images/Scrum.avif",
             school: "CertiProf",
             date: "Abril 2024",
             desc: "",
@@ -226,7 +226,7 @@ export const experiences = [
         },
         {
             id: 3,
-            img: "../../src/images/Scrum-product-owner.avif",
+            img: "/src/images/Scrum-product-owner.avif",
             school: "CertiProf",
             date: "Abril 2024",
             desc: "",
