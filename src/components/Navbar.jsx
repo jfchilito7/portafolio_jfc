@@ -109,24 +109,22 @@ const MobileMenu = styled.ul`
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     gap: 16px;
-    padding: 0 6px;
     list-style: none;
-    width: 100%;
     padding: 12px 40px 24px 40px;
-    background: ${({ theme }) => theme.card_light + 99};
+    background: ${({ theme }) => theme.card_light};
     position: absolute;
     top: 80px;
     right: 0;
-
-    transition: all 0.6s ease-in-out;
-    transform: ${({ isOpen}) => 
-        isOpen ? 'translateY(0)' : 'translateY(-100%)'};
     border-radius: 0 0 20px 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
-    z-index: ${({ isOpen }) => (isOpen ? '1000' : '-1000')};
+
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform: ${({ isOpen }) => (isOpen ? 'translateY(0)' : 'translateY(-20px)')};
+    opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
+    pointer-events: ${({ isOpen }) => (isOpen ? 'auto' : 'none')};
+    z-index: 999;
 `;
 
 const GithubButtonComponent = () => (

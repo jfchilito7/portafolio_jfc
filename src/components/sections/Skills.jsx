@@ -45,6 +45,7 @@ const Desc = styled.p`
 
     @media screen and (max-width: 768px) {
         font-size: 16px;
+        padding: 0 35px;
     }
 `;
 

@@ -47,12 +47,13 @@ const Desc = styled.div`
 
     @media screen and (max-width: 768px) {
         font-size: 16px;
+        padding: 0 35px;
     }
 `;
 
 const ContactForm = styled.form`
-    width: 95%;
-    max-width: 600px;
+    width: 75%;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     background-color: rgba(17, 25, 40, 0.83);
