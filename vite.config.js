@@ -7,7 +7,13 @@ export default defineConfig({
     react(),
     viteCompression({ algorithm: "brotliCompress" }),
   ],
-  assetsInclude: ['**/*.PNG'],
+  assetsInclude: [    
+    '**/*.PNG',
+    '**/*.JPG',
+    '**/*.JPEG',
+    '**/*.png',
+    '**/*.jpg',
+    '**/*.jpeg',],
   build: {
     sourcemap: true, // Habilita los mapas de origen
     target: "esnext",

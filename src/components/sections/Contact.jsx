@@ -103,7 +103,7 @@ const ContactButton = styled.button`
     width: 100%;
     text-decoration: none;
     text-align: center;
-    background: hsla(271, 100%, 50%, 1);
+    background: ${({theme}) => theme.primary};
     padding: 13px 16px;
     margin-top: 2px;
     border-radius: 12px;
@@ -112,6 +112,16 @@ const ContactButton = styled.button`
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
+
+    &:hover {
+        background-color: #fff;
+        color: ${({ theme }) => theme.primary};
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px ${({ theme }) => theme.primary}50;
+    }
 `;
 
 const Contact = () => {

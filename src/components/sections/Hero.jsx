@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { BioData } from '../../data/constants';
 import Typewriter from 'typewriter-effect';
-import HeroImage from '../../images/HeroImage.avif';
+import HeroImage from '../../images/IMG_3458.PNG';
 import HeroBgAnimation from '../HeroBgAnimation'
 import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
@@ -165,7 +165,6 @@ const Img = styled.img `
     height: 100%;
     max-width: 400px;
     max-height: 400px;
-    border: 2px solid ${({theme}) => theme.primary};
 
     @media screen and (max-width: 640px) {
         max-width: 280px;
