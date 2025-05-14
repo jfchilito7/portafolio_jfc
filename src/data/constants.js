@@ -9,7 +9,7 @@ export const BioData = {
     description:
         'Soy una persona motivada y versátil, siempre dispuesto a enfrentar nuevos desafíos. Con una pasión por el aprendizaje, estoy comprometido a ofrecer resultados de alta calidad. Con una actitud positiva y una mentalidad de crecimiento, estoy listo para hacer una contribución significativa y alcanzar grandes metas.',
     github: 'https://github.com/jfchilito7',
-    resume: 'https://drive.google.com/file/d/1rRpfipPOTP2lVPD1DdCTVcCjjTqdyhm5/view?usp=sharing',
+    resume: 'https://drive.google.com/file/d/1dyRK12kAZpBl1X0AdEr4_PWysVb0KCsF/view?usp=sharing',
     linkedin: 'https://www.linkedin.com/in/juan-chilito/',
     instagram: 'https://www.instagram.com/juanfelipe_chilito/',
 };
