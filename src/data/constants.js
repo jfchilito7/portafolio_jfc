@@ -148,7 +148,7 @@ export const experiences = [
         img: "/img/logo1.jpg",
         role: "Desarrollador De Contenido Multimedia",
         company: "Bayron Becerra Foundation",
-        date: "Junio 2024 - Diciembre 2024",
+        date: "Junio 2024 - Enero 2025",
         desc: "Diseñar, desarrollar e implementar diferentes estrategias multimedia (edición, community manage-ment y estrategia de contenidos). Creando soluciones personalizadas y eficientes, optimizando la experiencia de la fundación con sus usuarios.",
         skills: [
             "Illustrator",
